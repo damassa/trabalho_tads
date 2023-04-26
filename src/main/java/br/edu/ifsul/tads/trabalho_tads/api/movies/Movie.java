@@ -3,13 +3,13 @@ package br.edu.ifsul.tads.trabalho_tads.api.movies;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
+@NamedQueries({
+        @NamedQuery(name="Movie.findByName", query="select m from Movie m where m.name like :name"),
+})
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -25,19 +25,19 @@ public class MovieServiceTest {
     @Test
     public void testGetMovies() {
         List<MovieDTO> movies = service.getMovies();
-        assertEquals(2, movies.size());
+        assertEquals(3, movies.size());
     }
 
     @Test
     public void testGetMoviesById() {
         MovieDTO m = service.getMovieById(1L);
         assertNotNull(m);
-        assertEquals("The Exorcist", m.getName());
+        assertEquals("Power Rangers: The Movie", m.getName());
     }
 
     @Test
     public void testGetMoviesByName() {
-        assertEquals(1, service.getMovieByName("Power").size());
+        assertEquals(1, service.getMovieByName("Power Rangers: The Movie").size());
         assertEquals(1, service.getMovieByName("The Exorcist").size());
         assertEquals(1, service.getMovieByName("O Auto  da Compadecida").size());
     }
@@ -48,7 +48,7 @@ public class MovieServiceTest {
         movie.setName("Godzilla");
         movie.setDuration(65);
         movie.setYear(1998);
-        movie.setPlot("Giant ass dinosaur attacking a city.");
+        movie.setPlot("Giant ass lizard attacking a city.");
         movie.setImage("https://upload.wikimedia.org/wikipedia/en/2/2e/Godzilla_%281998_Movie_Poster%29.jpg");
 
         MovieDTO m = service.insert(movie);
@@ -63,7 +63,7 @@ public class MovieServiceTest {
         assertEquals("Godzilla", m.getName());
         assertEquals(65, m.getDuration());
         assertEquals(1998, m.getYear());
-        assertEquals("Giant ass dinosaur attacking a city.", m.getPlot());
+        assertEquals("Giant ass lizard attacking a city.", m.getPlot());
         assertEquals("https://upload.wikimedia.org/wikipedia/en/2/2e/Godzilla_%281998_Movie_Poster%29.jpg", m.getImage());
 
         service.delete(id);
@@ -86,7 +86,7 @@ public class MovieServiceTest {
         mDTO.setName("Godzilla 2000");
         mDTO.setDuration(90);
         mDTO.setYear(2000);
-        mDTO.setPlot("Giant ass dinosaur attacking a city in Japan.");
+        mDTO.setPlot("Giant ass lizard attacking a city in Japan.");
         mDTO.setImage("https://upload.wikimedia.org/wikipedia/en/f/f0/Godzilla2000jap.jpg?20171007235516");
         Movie m = Movie.create(mDTO);
 
@@ -95,7 +95,7 @@ public class MovieServiceTest {
         assertEquals("Godzilla 2000", mDTO.getName());
         assertEquals(90, mDTO.getDuration());
         assertEquals(2000, mDTO.getYear());
-        assertEquals("Giant ass dinosaur attacking a city in Japan.", mDTO.getPlot());
+        assertEquals("Giant ass lizard attacking a city in Japan.", mDTO.getPlot());
         assertEquals("https://upload.wikimedia.org/wikipedia/en/f/f0/Godzilla2000jap.jpg?20171007235516", mDTO.getImage());
 
         m.setName(name);
