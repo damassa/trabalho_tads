@@ -25,7 +25,7 @@ public class MovieService {
         return movie.map(MovieDTO::create).orElseThrow(() -> new ObjectNotFoundException("Movie not found."));
     }
     public List<MovieDTO> getMovieByName(String name) {
-        return rep.findByName(name).stream().map(MovieDTO::create).collect(Collectors.toList());
+        return rep.findByName(name+"%").stream().map(MovieDTO::create).collect(Collectors.toList());
     }
     public MovieDTO insert(Movie movie) {
         Assert.isNull(movie.getId(), "Couldn't insert!");
