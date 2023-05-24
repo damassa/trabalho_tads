@@ -1,0 +1,2 @@
+INSERT INTO tads_aulas.movie (id, duration, image, name, plot, year) VALUES (1, 95, 'https://upload.wikimedia.org/wikipedia/en/1/11/Power_rangers_movie_poster.jpg', 'Power', 'A bunch of teenagers saving the world.', 1995);
+INSERT INTO tads_aulas.movie (id, duration, image, name, plot, year) VALUES (2, 132, 'https://upload.wikimedia.org/wikipedia/en/7/7b/Exorcist_ver2.jpg', 'The Exorcist', 'Two priests saving a possessed girl.', 1973);
